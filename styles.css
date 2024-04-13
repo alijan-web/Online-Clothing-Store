@@ -1,8 +1,8 @@
-a {
+.nav-item a {
     background-image: linear-gradient(
       to right,
-      #54b3d6,
-      #54b3d6 50%,
+      #d654d4,
+      #d654d4 50%,
       #000 50%
     );
     background-size: 200% 100%;
@@ -18,9 +18,9 @@ a {
 
   }
   
-  a:before{
+  .nav-item a:before{
     content: '';
-    background: #54b3d6;
+    background: #d654d4;
     display: block;
     position: absolute;
     bottom: -3px;
@@ -30,10 +30,46 @@ a {
     transition: all 0.3s ease-in-out;
   }
   
-  a:hover {
+  .nav-item a:hover {
    background-position: 0;
   }
   
-  a:hover::before{
+  .nav-item a:hover::before{
     width: 100%;
   }
+
+
+  /* Fixed header */
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Add padding to body to prevent content from being overlapped by the fixed header */
+body {
+  padding-top: 80px; /* Adjust this value based on your header height */
+}
+
+/* Shadow effect on scroll */
+header.scrolled {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Search input group */
+.input-group {
+  width: 100%;
+}
+
+/* Search icon */
+.input-group-append .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.bg-light a {
+  text-decoration: none;
+}
+
