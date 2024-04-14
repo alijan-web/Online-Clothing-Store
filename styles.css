@@ -121,3 +121,66 @@ header.scrolled {
       grid-template-columns: 1fr;
   }
 }
+footer {
+  background-color: rgb(33, 33, 33);
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+footer h3 {
+  margin-top: 0;
+  font-family: sans-serif;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+footer .section {
+  flex: 1;
+  margin: 0 15px;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 10px;
+}
+
+footer ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+footer .contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+footer .contact a {
+  color: white;
+  margin: 0 10px;
+  font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  footer .container {
+      flex-direction: column;
+  }
+  
+  footer .section {
+      margin-bottom: 20px;
+  }
+}
