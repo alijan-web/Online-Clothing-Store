@@ -1,45 +1,10 @@
-.nav-item a {
-    background-image: linear-gradient(
-      to right,
-      #d654d4,
-      #d654d4 50%,
-      #000 50%
-    );
-    background-size: 200% 100%;
-    background-position: -100%;
-    display: inline-block;
-    padding: 5px 0;
-    position: relative;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: all 0.3s ease-in-out;
-    margin: 0 30px;
-    font-weight: bold;
+/* Add padding to body to prevent content from being overlapped by the fixed header */
+body {
+  padding-top: 80px;
+  /* Adjust this value based on your header height */
+}
 
-  }
-  
-  .nav-item a:before{
-    content: '';
-    background: #d654d4;
-    display: block;
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 0;
-    height: 3px;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .nav-item a:hover {
-   background-position: 0;
-  }
-  
-  .nav-item a:hover::before{
-    width: 100%;
-  }
-
-
-  /* Fixed header */
+/* Fixed header */
 header {
   width: 100%;
   position: fixed;
@@ -49,14 +14,50 @@ header {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Add padding to body to prevent content from being overlapped by the fixed header */
-body {
-  padding-top: 80px; /* Adjust this value based on your header height */
-}
-
 /* Shadow effect on scroll */
 header.scrolled {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-item a {
+  background-image: linear-gradient(to right,
+      #d654d4,
+      #d654d4 50%,
+      #000 50%);
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.nav-item a:before {
+  content: '';
+  background: #d654d4;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-item a:hover {
+  background-position: 0;
+}
+
+.nav-item a:hover::before {
+  width: 100%;
+}
+
+.bg-light a {
+  text-decoration: none;
 }
 
 /* Search input group */
@@ -69,7 +70,54 @@ header.scrolled {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-.bg-light a {
-  text-decoration: none;
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  margin-top: 50px;
 }
 
+.box {
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+.box a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.box img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  transition: all ease-in-out 0.3s;
+}
+
+.box img:hover {
+  transform: scale(1.1);
+}
+
+.price-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: red;
+  margin-right: 10px;
+}
+
+.discount-price {
+  color: green;
+}
+
+@media (max-width: 768px) {
+  .container {
+      grid-template-columns: 1fr;
+  }
+}
