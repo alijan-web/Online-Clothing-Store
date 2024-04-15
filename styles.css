@@ -70,6 +70,7 @@ header.scrolled {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
+
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -118,19 +119,22 @@ header.scrolled {
 
 @media (max-width: 768px) {
   .container {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 }
+
 footer {
   background-color: rgb(33, 33, 33);
   color: white;
-  padding: 10px 0;
+  padding: 5px 0;
   text-align: center;
 }
 
 footer h3 {
   margin-top: 0;
   font-family: sans-serif;
+  margin-bottom: 30px;
+  color: rgb(255, 0, 242);
 }
 
 footer .container {
@@ -154,12 +158,14 @@ footer ul li {
 }
 
 footer ul li a {
-  color: white;
+  color: rgb(255, 255, 255);
   text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 footer ul li a:hover {
   text-decoration: underline;
+  color: white;
 }
 
 footer .contact {
@@ -177,10 +183,10 @@ footer .contact a {
 
 @media (max-width: 768px) {
   footer .container {
-      flex-direction: column;
+    flex-direction: column;
   }
-  
+
   footer .section {
-      margin-bottom: 20px;
+    margin-bottom: 20px;
   }
 }
