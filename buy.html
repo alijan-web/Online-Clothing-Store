@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Header</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .large-img {
+        display: flex;
+        margin-top: 50px;
+    }
+
+    .large-img img {
+        width: 500px;
+    }
+
+    .small-img img {
+        width: 120px;
+        display: flex;
+        padding: 20px;
+    }
+
+    .img-details {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+    }
+    .name {
+        display: flex;
+        flex-direction: column;
+    }
+.price {
+    display: flex;
+    flex-direction: row;
+   justify-content: space-between;
+   margin: 30px 100px;
+}
+.price h6 {
+    font-size: 40px;
+    margin-top: 5px;
+    color: rgb(89, 159, 18);
+}
+.price del {
+    font-size: 40px;
+color: rgb(255, 0, 0);
+}
+.my-detail h4 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    color: #232121;
+}
+.my-detail p {
+    margin-left: 50px;
+}
+
+
+
+
+.button {
+  --width: 600px;
+  --height: 50px;
+  --tooltip-height: 35px;
+  --tooltip-width: 90px;
+  --gap-between-tooltip-to-button: 18px;
+  --button-color: #222;
+  --tooltip-color: #fff;
+  width: var(--width);
+  height: var(--height);
+  background: var(--button-color);
+  position: relative;
+  text-align: center;
+  border-radius: 0.45em;
+  font-family: "Arial";
+  transition: background 0.3s;
+  margin-top: 30px;
+}
+
+.button::before {
+  position: absolute;
+  content: attr(data-tooltip);
+  width: var(--tooltip-width);
+  height: var(--tooltip-height);
+  background-color: #555;
+  font-size: 0.9rem;
+  color: #fff;
+  border-radius: .25em;
+  line-height: var(--tooltip-height);
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+  left: calc(50% - var(--tooltip-width) / 2);
+}
+
+.button::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: #555;
+  left: calc(50% - 10px);
+  bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+}
+
+.button::after,.button::before {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-wrapper,.text,.icon {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  color: #fff;
+}
+
+.text {
+  top: 0
+}
+
+.text,.icon {
+  transition: top 0.5s;
+}
+
+.icon {
+  color: #fff;
+  top: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.button:hover {
+  background: #222;
+}
+
+.button:hover .text {
+  top: -100%;
+}
+
+.button:hover .icon {
+  top: 0;
+}
+
+.button:hover:before,.button:hover:after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.button:hover:after {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+}
+
+.button:hover:before {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+}
+
+
+
+
+</style>
+
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="img/logo-removebg-preview.png" alt="Logo" width="150" height="70">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              SUMMER 3PC</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              NEW ARRIVALS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              WINTER 3PC</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              WINTER 3PC VOL 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              WINTER 3PC VOL 3</a>
+          </li>
+          <li class="nav-item">
+
+
+            <form class="form-inline my-2 my-lg-0">
+              <div class="input-group">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-info my-2 my-sm-0" type="submit">
+                    <i class="fa fa-search"></i> <!-- Search icon -->
+                  </button>
+                </div>
+              </div>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+
+<div class="large-img details">
+    <img src="img/black.jpg" alt="">
+    <div class="small-img">
+        <img src="img/navi.jpg" alt="">
+        <img src="img/navi.jpg" alt="">
+        <img src="img/navi.jpg" alt="">
+        <img src="img/navi.jpg" alt="">
+        <img src="img/navi.jpg" alt="">
+    </div>
+    
+    
+    <!-- ... (Your Header Code) -->
+    <div class="name">
+        
+        <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam alias iusto aperiam nulla neque quod, laborum unde tempora sapiente tenetur!</h4>
+        <div class="price">
+            <del>Rs: 5500</del>
+            <h6>Rs: 3300</h6>
+        </div>
+
+        <div class="my-detail">
+            <h4>Shirt:</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, molestiae.</p>
+
+            <h4>Fabric:</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, molestiae.</p>
+
+            <h4>Colour:</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, molestiae.</p>
+
+            <h4>Dupatta:</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, molestiae.</p>
+
+            <h4>Trouser:</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, molestiae.</p>
+        </div>
+
+
+        <div data-tooltip="Price:-$20" class="button">
+            <div class="button-wrapper">
+              <div class="text">Buy Now</div>
+                <span class="icon">
+                  <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
+            </svg>
+                </span>
+              </div>
+            </div>
+
+    </div>
+</div>
+
+
+
+
+
+    
+    
+
+<script>
+    // JavaScript function to change the large image when a small image is clicked
+    function changeImage(imageSrc) {
+        document.getElementById('largeImage').src = imageSrc;
+    }
+</script>
+
+<footer>
+    <div class="container">
+      <div class="section">
+        <h3>SHOP</h3>
+        <ul>
+          <li><a href="#">SUMMER 3PC</a></li>
+          <li><a href="#">NEW ARRIVALS</a></li>
+          <li><a href="#">WINTER 3PC VOL 2</a></li>
+          <li><a href="#">WINTER 3PC VOL 3</a></li>
+          <li><a href="#">NEW ARRIVALS 3PC</a></li>
+        </ul>
+      </div>
+      <div class="section">
+        <h3>INFORMATION</h3>
+        <ul>
+          <li><a href="#">ABOUT US</a></li>
+          <li><a href="#">CONTACT US</a></li>
+          <li><a href="#">PRIVACY POLICY</a></li>
+          <li><a href="#">SHIPPING POLICY</a></li>
+          <li><a href="#">TERMS OF SERVICE</a></li>
+        </ul>
+      </div>
+      <div class="section">
+        <h3>CONTACTED</h3>
+        <div class="contact">
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+        <div class="section">
+          <ul>
+            <li style="margin-top: 15px;"><a href="#">03143444215</a></li>
+          </ul>
+        </div>
+        <div class="section">
+          <ul>
+            <li><a href="#">alijaan.web@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Add scroll event listener
+    window.addEventListener('scroll', function () {
+      const header = document.querySelector('header');
+
+      // Add 'scrolled' class to header when scrolled beyond 50px
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
